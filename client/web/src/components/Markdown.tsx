@@ -4,6 +4,7 @@ import { isValidStr } from 'tailchat-shared';
 import { Loadable } from './Loadable';
 import { Image } from 'tailchat-design';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import './Markdown.less';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -32,7 +33,14 @@ export const Markdown: React.FC<{
     React.ComponentProps<typeof ReactMarkdown>['components']
   >(
     () => ({
-      img: (props) => <Image src={props.src} preview={true} />,
+      img: (props) => (
+        <Image
+          src={props.src}
+          preview={true}
+          width={props.width}
+          height={props.height}
+        />
+      ),
     }),
     []
   );
@@ -43,8 +51,9 @@ export const Markdown: React.FC<{
       transformImageUri={(src) => transformUrl(src)}
       transformLinkUri={(href) => transformUrl(href)}
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw]}
       linkTarget="_blank"
-      skipHtml={true}
+      skipHtml={false}
       components={components}
     >
       {raw}
