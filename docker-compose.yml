@@ -5,7 +5,7 @@ services:
   service-core:
     build:
       context: .
-    image: tailchat
+    image: cc-aigc/tailchat
     restart: unless-stopped
     env_file: docker-compose.env
     environment:
@@ -26,7 +26,7 @@ services:
   service-openapi:
     build:
       context: .
-    image: tailchat
+    image: cc-aigc/tailchat
     restart: unless-stopped
     env_file: docker-compose.env
     environment:
@@ -48,7 +48,7 @@ services:
   service-all-plugins:
     build:
       context: .
-    image: tailchat
+    image: cc-aigc/tailchat
     restart: unless-stopped
     env_file: docker-compose.env
     environment:
