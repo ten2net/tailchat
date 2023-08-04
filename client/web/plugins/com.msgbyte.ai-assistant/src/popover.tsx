@@ -59,11 +59,30 @@ export const AssistantPopover: React.FC<{
   const [{ loading, value }, handleCallAI] = useAsyncRequest(
     async (question: string) => {
       // TODO: wait for replace
-      const { data } = await axios.post('https://yyejoq.laf.dev/chatgpt', {
-        question,
-      });
+      // const { data } = await axios.post('https://yyejoq.laf.dev/chatgpt', {
+      //   question,
+      // });
 
-      return data;
+      const { data } = await axios.post(
+        'http://192.168.15.130:8001/v1/chat-messages',
+        {
+          inputs: {},
+          query: question,
+          response_mode: 'blocking',
+          conversation_id: '',
+          user: 'abc-123',
+        },
+        {
+          headers: {
+            Authorization: 'Bearer app-UhUK3GKvfi6Rryvvlrt5Tkuf',
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      const wrap_data = { ...data, result: true };
+
+      return wrap_data;
     },
     []
   );
