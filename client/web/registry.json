@@ -214,5 +214,15 @@
     "author": "moonrailgun",
     "description": "Add chatgpt into Tailchat",
     "requireRestart": true
+  },
+  {
+    "label": "AI CCBots",
+    "name": "cn.e-u.ccbots",
+    "url": "/plugins/cn.e-u.ccbots/index.js",
+    "icon": "/plugins/cn.e-u.ccbots/assets/icon.png",
+    "version": "0.0.0",
+    "author": "wangf",
+    "description": "Add ccbots into Tailchat",
+    "requireRestart": true
   }
 ]

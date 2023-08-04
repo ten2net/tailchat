@@ -1,0 +1,10 @@
+{
+  "label": "AI 助手",
+  "name": "cn.e-u.ccbots",
+  "url": "/plugins/cn.e-u.ccbots/index.js",
+  "icon": "/plugins/cn.e-u.ccbots/assets/icon.png",
+  "version": "0.0.0",
+  "author": "wangf",
+  "description": "Add cc-bots into Tailchat",
+  "requireRestart": true
+}
