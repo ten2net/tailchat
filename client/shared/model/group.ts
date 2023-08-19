@@ -10,6 +10,9 @@ export const groupConfigNames = [
   // 隐藏群组成员标识位
   'hideGroupMemberDiscriminator',
 
+  // 禁止从群组中发起私信
+  'disableCreateConverseFromGroup',
+
   // 群组背景图
   'groupBackgroundImage',
 ] as const;
@@ -108,6 +111,7 @@ export function getGroupConfigWithInfo(
   groupInfo: GroupInfo | null | undefined
 ): {
   hideGroupMemberDiscriminator: boolean;
+  disableCreateConverseFromGroup: boolean;
   [key: string]: unknown;
 } {
   const config = groupInfo?.config ?? {};
@@ -115,6 +119,8 @@ export function getGroupConfigWithInfo(
   return {
     ...config,
     hideGroupMemberDiscriminator: config.hideGroupMemberDiscriminator ?? false,
+    disableCreateConverseFromGroup:
+      config.disableCreateConverseFromGroup ?? false,
   };
 }
 
