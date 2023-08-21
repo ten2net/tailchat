@@ -166,16 +166,9 @@ function listenNotify(socket: AppSocket, store: AppStore) {
     // 处理接受到的消息
     const converseId = message.converseId;
     const converse = store.getState().chat.converses[converseId];
-    const userId = store.getState().user.info?._id;
 
     // 添加消息到会话中
     const appendMessage = () => {
-      if (message.author === userId) {
-        // 如果是自己发送的消息，则忽略
-        // 因为存在local状态的消息，应该由发送消息的地方处理
-        return;
-      }
-
       store.dispatch(
         chatActions.appendConverseMessage({
           converseId,
@@ -191,7 +184,9 @@ function listenNotify(socket: AppSocket, store: AppStore) {
       // 如果会话没有加载, 但是是私信消息
       // 则获取会话信息后添加到会话消息中
       getCachedConverseInfo(converseId).then((converse) => {
-        if (converse.type === ChatConverseType.DM) {
+        if (
+          [ChatConverseType.DM, ChatConverseType.Multi].includes(converse.type)
+        ) {
           // 如果是私人会话, 则添加到dmlist
           appendUserDMConverse(converse._id);
         }

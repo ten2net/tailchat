@@ -1,9 +1,11 @@
 import React from 'react';
 import {
+  groupActions,
   model,
   showSuccessToasts,
   t,
   UploadFileResult,
+  useAppDispatch,
   useAsyncRequest,
   useGroupInfo,
 } from 'tailchat-shared';
@@ -21,10 +23,18 @@ export const GroupConfig: React.FC<{
 }> = React.memo((props) => {
   const groupId = props.groupId;
   const groupInfo = useGroupInfo(groupId);
+  const dispatch = useAppDispatch();
 
   const [{ loading }, handleModifyConfig] = useAsyncRequest(
     async (configName: model.group.GroupConfigNames, configValue: any) => {
       await model.group.modifyGroupConfig(groupId, configName, configValue);
+      dispatch(
+        groupActions.updateGroupConfig({
+          groupId,
+          configName,
+          configValue,
+        })
+      );
       showSuccessToasts();
     },
     [groupId]
@@ -49,6 +59,27 @@ export const GroupConfig: React.FC<{
             checked={config['hideGroupMemberDiscriminator'] ?? false}
             onChange={(checked) =>
               handleModifyConfig('hideGroupMemberDiscriminator', checked)
+            }
+          />
+        }
+      />
+
+      {/* 如果开启了 hideGroupMemberDiscriminator 则视为禁止发起私信 */}
+      <FullModalField
+        title={t('禁止在群组发起私信')}
+        tip={t('群组隐私控制，防止通过群组恶意骚扰用户。')}
+        content={
+          <Switch
+            disabled={
+              loading || config['hideGroupMemberDiscriminator'] === true
+            }
+            checked={
+              (config['hideGroupMemberDiscriminator'] === true ||
+                config['disableCreateConverseFromGroup']) ??
+              false
+            }
+            onChange={(checked) =>
+              handleModifyConfig('disableCreateConverseFromGroup', checked)
             }
           />
         }
