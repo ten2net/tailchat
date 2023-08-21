@@ -71,6 +71,76 @@ const panelTemplate: {
       },
     ],
   },
+  {
+    key: 'leanning',
+    label: t('教学空间'),
+    panels: [
+      {
+        id: '00',
+        name: t('讨论'),
+        type: GroupPanelType.GROUP,
+      },
+      {
+        id: '01',
+        name: t('全员'),
+        parentId: '00',
+        type: GroupPanelType.TEXT,
+      },
+      {
+        id: '001',
+        name: t('课程'),
+        parentId: '00',
+        type: GroupPanelType.TEXT,
+      },
+      {
+        id: '002',
+        name: t('作业'),
+        parentId: '00',
+        type: GroupPanelType.TEXT,
+      },
+      {
+        id: '003',
+        name: t('资源'),
+        parentId: '00',
+        type: GroupPanelType.TEXT,
+      },
+      {
+        id: '004',
+        name: t('测评'),
+        parentId: '00',
+        type: GroupPanelType.TEXT,
+      },
+      {
+        id: '005',
+        name: t('成绩'),
+        parentId: '00',
+        type: GroupPanelType.TEXT,
+      },
+      {
+        id: '009',
+        name: t('功能反馈'),
+        parentId: '00',
+        type: GroupPanelType.TEXT,
+      },
+      {
+        id: '10',
+        name: t('临时会议'),
+        type: GroupPanelType.GROUP,
+      },
+      {
+        id: '11',
+        name: t('会议室') + '1',
+        parentId: '10',
+        type: GroupPanelType.TEXT,
+      },
+      {
+        id: '11',
+        name: t('会议室') + '2',
+        parentId: '10',
+        type: GroupPanelType.TEXT,
+      },
+    ],
+  },
 ];
 
 export const ModalCreateGroup: React.FC = React.memo(() => {
