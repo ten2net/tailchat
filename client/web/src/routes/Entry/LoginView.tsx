@@ -94,7 +94,7 @@ export const LoginView: React.FC = React.memo(() => {
     <div className="w-96 text-white relative">
       <div className="mb-4 text-2xl">
         {t('登录 {{serverName}}', {
-          serverName: serverName || 'Tailchat',
+          serverName: serverName || 'CC-Talk',
         })}
       </div>
 

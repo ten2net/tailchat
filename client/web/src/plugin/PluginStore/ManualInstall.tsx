@@ -20,7 +20,7 @@ export const ManualInstall: React.FC = React.memo(() => {
   return (
     <div className="p-2">
       <Typography.Paragraph>
-        {t('请不要安装不明来源的插件，这可能会盗取你在 Tailchat 的个人信息')}
+        {t('请不要安装不明来源的插件，这可能会盗取你在 CC-Talk 的个人信息')}
       </Typography.Paragraph>
 
       <Input.TextArea
