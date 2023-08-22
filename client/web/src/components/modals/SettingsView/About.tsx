@@ -1,5 +1,5 @@
 import { Typography } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
 import { t, version } from 'tailchat-shared';
 import logoUrl from '@assets/images/logo.svg';
 import { Icon } from 'tailchat-design';
@@ -26,6 +26,7 @@ const LogoLink: React.FC<{
 LogoLink.displayName = 'LogoLink';
 
 export const SettingsAbout: React.FC = React.memo(() => {
+  const [hide, setHide] = useState<boolean>(true);
   return (
     <div className="select-text">
       <img
@@ -36,7 +37,7 @@ export const SettingsAbout: React.FC = React.memo(() => {
       />
 
       <Paragraph>
-        <Text className="font-bold">Tailchat</Text>
+        <Text className="font-bold">CC-Talk</Text>
         <Text>: {t('属于所有人的开源聊天工具')} </Text>
       </Paragraph>
       <Paragraph>{t('可供高度自定义的聊天工具')}</Paragraph>
@@ -54,49 +55,52 @@ export const SettingsAbout: React.FC = React.memo(() => {
       <Paragraph>
         {t('当前版本')}: {version}
       </Paragraph>
-
-      <div className="text-8xl flex flex-wrap space-x-4 bg-black p-4 rounded-md bg-opacity-20">
-        <LogoLink
-          src="https://github.com/msgbyte/tailchat"
-          icon="logos:github-octocat"
-        />
-        <LogoLink
-          src="https://en.wikipedia.org/wiki/Open_source"
-          icon="logos:opensource"
-        />
-        <LogoLink src="https://www.docker.com/" icon="logos:docker-icon" />
-        <LogoLink
-          src="https://ministar.moonrailgun.com/"
-          icon={
-            <img
-              className="w-24 h-24"
-              src="https://ministar.moonrailgun.com/img/logo.svg"
+      {!hide && (
+        <>
+          <div className="text-8xl flex flex-wrap space-x-4 bg-black p-4 rounded-md bg-opacity-20">
+            <LogoLink
+              src="https://github.com/msgbyte/tailchat"
+              icon="logos:github-octocat"
             />
-          }
-        />
-        <LogoLink
-          src="https://tushan.msgbyte.com/"
-          icon={
-            <img
-              className="w-24 h-24"
-              src="https://tushan.msgbyte.com/img/logo.svg"
+            <LogoLink
+              src="https://en.wikipedia.org/wiki/Open_source"
+              icon="logos:opensource"
             />
-          }
-        />
-        <LogoLink src="https://zh-hans.reactjs.org/" icon="logos:react" />
-        <LogoLink src="https://redux.js.org/" icon="logos:redux" />
-        <LogoLink
-          src="https://www.typescriptlang.org/"
-          icon="logos:typescript-icon"
-        />
-      </div>
+            <LogoLink src="https://www.docker.com/" icon="logos:docker-icon" />
+            <LogoLink
+              src="https://ministar.moonrailgun.com/"
+              icon={
+                <img
+                  className="w-24 h-24"
+                  src="https://ministar.moonrailgun.com/img/logo.svg"
+                />
+              }
+            />
+            <LogoLink
+              src="https://tushan.msgbyte.com/"
+              icon={
+                <img
+                  className="w-24 h-24"
+                  src="https://tushan.msgbyte.com/img/logo.svg"
+                />
+              }
+            />
+            <LogoLink src="https://zh-hans.reactjs.org/" icon="logos:react" />
+            <LogoLink src="https://redux.js.org/" icon="logos:redux" />
+            <LogoLink
+              src="https://www.typescriptlang.org/"
+              icon="logos:typescript-icon"
+            />
+          </div>
 
-      <Paragraph className="mt-4">
-        {t('开源地址')}:{' '}
-        <Link href="https://github.com/msgbyte/tailchat" target="_blank">
-          https://github.com/msgbyte/tailchat
-        </Link>
-      </Paragraph>
+          <Paragraph className="mt-4">
+            {t('开源地址')}:{' '}
+            <Link href="https://github.com/msgbyte/tailchat" target="_blank">
+              https://github.com/msgbyte/tailchat
+            </Link>
+          </Paragraph>
+        </>
+      )}
     </div>
   );
 });
