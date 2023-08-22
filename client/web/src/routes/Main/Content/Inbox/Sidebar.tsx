@@ -48,7 +48,7 @@ export const InboxSidebar: React.FC = React.memo(() => {
           key={item._id}
           title={title}
           desc={getMessageRender(payload.messageSnippet ?? '')}
-          source={'Tailchat'}
+          source={'CC-Talk'}
           readed={item.readed}
           to={buildLink(item._id)}
         />

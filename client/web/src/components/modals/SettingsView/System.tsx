@@ -3,7 +3,7 @@ import { FullModalField } from '@/components/FullModal/Field';
 import { LanguageSelect } from '@/components/LanguageSelect';
 import { pluginColorScheme, pluginSettings } from '@/plugin/common';
 import { Select, Switch } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
 import {
   t,
   useAlphaMode,
@@ -13,6 +13,7 @@ import {
 import _get from 'lodash/get';
 
 export const SettingsSystem: React.FC = React.memo(() => {
+  const [hide, setHide] = useState<boolean>(true);
   const { colorScheme, setColorScheme } = useColorScheme();
   const { settings, setSettings, loading } = useUserSettings();
   const { isAlphaMode, setAlphaMode } = useAlphaMode();
@@ -58,20 +59,20 @@ export const SettingsSystem: React.FC = React.memo(() => {
             />
           );
         })}
-
-      <FullModalField
-        title={t('Alpha测试开关')}
-        tip={t(
-          '在 Alpha 模式下会有一些尚处于测试阶段的功能将会被开放，如果出现问题欢迎反馈'
-        )}
-        content={
-          <Switch
-            checked={isAlphaMode}
-            onChange={(checked) => setAlphaMode(checked)}
-          />
-        }
-      />
-
+      {!hide && (
+        <FullModalField
+          title={t('Alpha测试开关')}
+          tip={t(
+            '在 Alpha 模式下会有一些尚处于测试阶段的功能将会被开放，如果出现问题欢迎反馈'
+          )}
+          content={
+            <Switch
+              checked={isAlphaMode}
+              onChange={(checked) => setAlphaMode(checked)}
+            />
+          }
+        />
+      )}
       {isAlphaMode && (
         <FullModalField
           title={t('聊天列表虚拟化') + ' (Beta)'}
