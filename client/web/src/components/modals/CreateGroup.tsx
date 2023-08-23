@@ -117,6 +117,15 @@ const panelTemplate: {
         type: GroupPanelType.TEXT,
       },
       {
+        id: '006',
+        name: t('AI工具'),
+        parentId: '00',
+        type: GroupPanelType.PLUGIN,
+        provider: 'com.msgbyte.webview',
+        pluginPanelName: 'com.msgbyte.webview/grouppanel',
+        meta: { url: 'http://192.168.15.130:8001' },
+      },
+      {
         id: '009',
         name: t('功能反馈'),
         parentId: '00',

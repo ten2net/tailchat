@@ -58,7 +58,7 @@ export const FullModal: React.FC<FullModalProps> = React.memo((props) => {
             className="text-2xl border-2 rounded-1/2 border-gray-900 dark:border-gray-100"
             icon="mdi:close"
           />
-          <span className="text-center mt-0.5 font-bold">ESC</span>
+          <span className="text-center mt-0.5 font-bold">关闭</span>
         </div>
       )}
     </div>
