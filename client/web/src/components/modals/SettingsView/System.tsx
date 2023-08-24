@@ -13,7 +13,7 @@ import {
 import _get from 'lodash/get';
 
 export const SettingsSystem: React.FC = React.memo(() => {
-  const [hide, setHide] = useState<boolean>(true);
+  const hide = useState<boolean>(true);
   const { colorScheme, setColorScheme } = useColorScheme();
   const { settings, setSettings, loading } = useUserSettings();
   const { isAlphaMode, setAlphaMode } = useAlphaMode();
