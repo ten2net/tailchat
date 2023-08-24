@@ -115,7 +115,8 @@ class IAMService extends TcService {
             this.logger.error('Cannot storage avatar', avatar, err);
           }
         }
-
+        //用户类型EMPLOYEE或STUDENT
+        let userType = providerUserInfo.userType;
         const newUserInfo: UserStructWithToken = await ctx.call(
           'user.register',
           {
@@ -123,6 +124,7 @@ class IAMService extends TcService {
             nickname: providerUserInfo.nickname,
             password: String(new db.Types.ObjectId()), // random password
             avatar,
+            userType,
           }
         );
 

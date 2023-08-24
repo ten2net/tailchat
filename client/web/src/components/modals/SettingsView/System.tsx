@@ -20,7 +20,7 @@ export const SettingsSystem: React.FC = React.memo(() => {
 
   return (
     <div>
-      <FullModalField title={t('系统语言')} content={<LanguageSelect />} />
+      {/* <FullModalField title={t('系统语言')} content={<LanguageSelect />} /> */}
 
       <FullModalField
         title={t('配色方案')}

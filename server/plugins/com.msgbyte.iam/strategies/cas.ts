@@ -55,6 +55,7 @@ export const CASStrategy: StrategyType = {
           userNO: string;
           avatar_url: string;
           email: string;
+          userType: string;
         };
       }>();
 
@@ -65,6 +66,7 @@ export const CASStrategy: StrategyType = {
       username: result.attributes.userNO,
       email: result.attributes.email,
       avatar: result.attributes.avatar_url,
+      userType: result.attributes.userType,
     };
   },
 };
