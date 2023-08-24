@@ -147,7 +147,7 @@ export const zhTranslation = {
     },
     socketio: {
       tip1: '服务器URL为:',
-      tip2: '账号密码为Tailchat后台的账号密码',
+      tip2: '账号密码为CC-Talk后台的账号密码',
       tip3: '注意: 请打开 "Advanced options" 并选中 "websocket only" 与 "MessagePack parser"',
       btn: '打开管理平台',
     },

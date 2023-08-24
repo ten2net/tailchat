@@ -1,5 +1,5 @@
 import { IconFile, IconMessage, IconUser, IconUserGroup } from 'tushan/icon';
-import React from 'react';
+import React, { useState } from 'react';
 import {
   XAxis,
   YAxis,
@@ -27,6 +27,7 @@ import { request } from '../request';
 const { GridItem } = Grid;
 
 export const Dashboard: React.FC = React.memo(() => {
+  const hide = useState<boolean>(true);
   const { userIdentity } = useUserStore(createSelector('userIdentity'));
   const { t } = useTranslation();
 
@@ -59,30 +60,34 @@ export const Dashboard: React.FC = React.memo(() => {
 
             <MessageCountChart />
           </Card>
-
-          <Grid cols={3} colGap={12} rowGap={16}>
-            <GridItem>
-              <DashboardItem title="Docs" href="https://tailchat.msgbyte.com/">
-                {t('tushan.dashboard.tip.docs')}
-              </DashboardItem>
-            </GridItem>
-            <GridItem>
-              <DashboardItem
-                title="Github"
-                href="https://github.com/msgbyte/tailchat"
-              >
-                {t('custom.dashboard.tip.github')}
-              </DashboardItem>
-            </GridItem>
-            <GridItem>
-              <DashboardItem
-                title="Provide by Tushan"
-                href="https://tushan.msgbyte.com/"
-              >
-                {t('custom.dashboard.tip.tushan')}
-              </DashboardItem>
-            </GridItem>
-          </Grid>
+          {!hide && (
+            <Grid cols={3} colGap={12} rowGap={16}>
+              <GridItem>
+                <DashboardItem
+                  title="Docs"
+                  href="https://tailchat.msgbyte.com/"
+                >
+                  {t('tushan.dashboard.tip.docs')}
+                </DashboardItem>
+              </GridItem>
+              <GridItem>
+                <DashboardItem
+                  title="Github"
+                  href="https://github.com/msgbyte/tailchat"
+                >
+                  {t('custom.dashboard.tip.github')}
+                </DashboardItem>
+              </GridItem>
+              <GridItem>
+                <DashboardItem
+                  title="Provide by Tushan"
+                  href="https://tushan.msgbyte.com/"
+                >
+                  {t('custom.dashboard.tip.tushan')}
+                </DashboardItem>
+              </GridItem>
+            </Grid>
+          )}
         </Space>
       </div>
     </div>
