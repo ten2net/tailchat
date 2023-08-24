@@ -57,6 +57,7 @@ export const GithubStrategy: StrategyType = {
         name: string;
         email: string;
         avatar_url: string;
+        userType: string;
       }>();
 
     console.log(`[github oauth] user info:`, result);
@@ -67,6 +68,7 @@ export const GithubStrategy: StrategyType = {
       username: result.login,
       email: result.email,
       avatar: result.avatar_url,
+      userType: result.userType,
     };
   },
 };

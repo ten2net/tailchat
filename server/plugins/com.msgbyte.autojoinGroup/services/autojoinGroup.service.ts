@@ -19,6 +19,22 @@ class AutojoinGroupService extends TcService {
 
     return ids.split(',');
   }
+  //教员群组
+  get autojoinGroupEmployeeIds(): string[] | null {
+    const ids = process.env.AUTOJOIN_GROUP_ID_EMPLOYEE;
+    if (!ids) {
+      return null;
+    }
+    return ids.split(',');
+  }
+  //学员群组
+  get autojoinGroupStudentIds(): string[] | null {
+    const ids = process.env.AUTOJOIN_GROUP_ID_STUDENT;
+    if (!ids) {
+      return null;
+    }
+    return ids.split(',');
+  }
 
   onInit() {
     if (!this.autojoinGroupIds) {
@@ -38,7 +54,6 @@ class AutojoinGroupService extends TcService {
     if (!autojoinGroupIds) {
       return;
     }
-
     console.log(ctx.params, ctx.meta);
 
     const userId = ctx.meta.actionResult?._id;
@@ -48,9 +63,19 @@ class AutojoinGroupService extends TcService {
       this.logger.fatal('Autojoin Group Failed: cannot found userId from ctx');
       return;
     }
-
+    //自动加入群组的默认的群组ID集合
+    let autoGroupIds = autojoinGroupIds;
+    //包含用户信息的json
+    const params = ctx.params as any;
+    //当前用户为教员
+    if (params.userType == process.env.USERTYPE_EMPLOYEE) {
+      autoGroupIds = this.autojoinGroupEmployeeIds;
+    } else if (params.userType == process.env.USERTYPE_STUDENT) {
+      //学员
+      autoGroupIds = this.autojoinGroupStudentIds;
+    }
     await Promise.all(
-      autojoinGroupIds.map(async (groupId: string) => {
+      autoGroupIds.map(async (groupId: string) => {
         await ctx.call('group.addMember', {
           groupId,
           userId,

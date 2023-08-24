@@ -10,5 +10,6 @@ export interface StrategyType {
     username: string;
     email: string;
     avatar: string;
+    userType: string;
   }>;
 }
