@@ -35,5 +35,5 @@ NoImage.args = {
 export const withImage = Template.bind({});
 withImage.args = {
   name: 'Anonymous',
-  src: 'http://dummyimage.com/50x50',
+  src: '/images/avatar/default-avatar.png',
 };
