@@ -5,7 +5,7 @@ regPluginColorScheme({
   name: 'light+navy-blue',
 });
 
-// TODO: 配置为默认主题
+// 配置为默认主题, 修改主题名称需同步修改 "client\shared\contexts\ColorSchemeContext.tsx" 该文件
 
 sharedEvent.on('loadColorScheme', (colorSchemeName) => {
   console.log('切换到主题：', colorSchemeName);
