@@ -19,7 +19,8 @@ export const ColorSchemeContextProvider: React.FC<PropsWithChildren> =
   React.memo((props) => {
     const [colorScheme = 'dark', { save: setColorScheme }] = useStorage(
       'colorScheme',
-      'dark'
+      // 使用内置主题插件做为默认皮肤, 插件路径 "client\web\plugins\cn.e-u.theme.navy\src\index.ts"
+      'light+navy-blue'
     );
 
     useEffect(() => {
