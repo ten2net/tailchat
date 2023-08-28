@@ -18,6 +18,10 @@ export const Translate = {
     'zh-CN': '操作',
     'en-US': 'Operation',
   }),
+  delete: localTrans({
+    'zh-CN': '删除',
+    'en-US': 'Delete',
+  }),
   enter: localTrans({
     'zh-CN': '进入',
     'en-US': 'Enter',
@@ -42,6 +46,14 @@ export const Translate = {
     basicInfo: localTrans({
       'zh-CN': '基础信息',
       'en-US': 'Basic Info',
+    }),
+    appName: localTrans({
+      'zh-CN': '应用名称',
+      'en-US': 'App Name',
+    }),
+    appDesc: localTrans({
+      'zh-CN': '应用描述',
+      'en-US': 'App Description',
     }),
     bot: localTrans({
       'zh-CN': '机器人',
