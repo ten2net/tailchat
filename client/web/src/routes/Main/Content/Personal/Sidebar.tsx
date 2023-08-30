@@ -54,6 +54,18 @@ export const PersonalSidebar: React.FC = React.memo(() => {
       <SectionHeader>{userInfo?.nickname}</SectionHeader>
 
       <div className="p-2 overflow-auto">
+        {/* 插件自定义面板 */}
+        {pluginCustomPanel
+          .filter((p) => p.position === 'personal')
+          .map((p) => (
+            <SidebarItem
+              key={p.name}
+              name={p.label}
+              icon={<Icon icon={p.icon} />}
+              to={`/main/personal/custom/${p.name}`}
+            />
+          ))}
+
         <SidebarItem
           name={t('好友')}
           icon={<Icon icon="mdi:account-multiple" />}
@@ -68,18 +80,6 @@ export const PersonalSidebar: React.FC = React.memo(() => {
             to="/main/personal/plugins"
           />
         )}
-
-        {/* 插件自定义面板 */}
-        {pluginCustomPanel
-          .filter((p) => p.position === 'personal')
-          .map((p) => (
-            <SidebarItem
-              key={p.name}
-              name={p.label}
-              icon={<Icon icon={p.icon} />}
-              to={`/main/personal/custom/${p.name}`}
-            />
-          ))}
 
         <SidebarSection
           action={
