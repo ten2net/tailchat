@@ -22,53 +22,6 @@
     "requireRestart": false
   },
   {
-    "label": "file.pizza",
-    "label.zh-CN": "file.pizza",
-    "name": "com.msgbyte.filepizza",
-    "url": "/plugins/com.msgbyte.filepizza/index.js",
-    "icon": "/plugins/com.msgbyte.filepizza/assets/icon.png",
-    "version": "0.0.0",
-    "author": "moonrailgun",
-    "description": "Quickly open filepizza in the chat input box to support p2p file transfer",
-    "description.zh-CN": "在聊天输入框快捷打开 filepizza 以支持p2p传输文件",
-    "requireRestart": true
-  },
-  {
-    "label": "filesend",
-    "label.zh-CN": "filesend",
-    "name": "com.msgbyte.filesend",
-    "url": "/plugins/com.msgbyte.filesend/index.js",
-    "version": "0.0.0",
-    "author": "moonrailgun",
-    "description": "Quickly open Filesend in the chat input box to support file transfer",
-    "description.zh-CN": "在聊天输入框快捷打开 Filesend 以支持传输文件",
-    "requireRestart": true
-  },
-  {
-    "label": "files.fm",
-    "label.zh-CN": "files.fm",
-    "name": "com.msgbyte.filesfm",
-    "url": "/plugins/com.msgbyte.filesfm/index.js",
-    "icon": "/plugins/com.msgbyte.filesfm/assets/icon.png",
-    "version": "0.0.0",
-    "author": "moonrailgun",
-    "description": "Quickly open files.fm in the chat input box to support file transfer",
-    "description.zh-CN": "在聊天输入框快捷打开 files.fm 以支持传输文件",
-    "requireRestart": true
-  },
-  {
-    "label": "Genshin Toolbox",
-    "label.zh-CN": "原神工具箱",
-    "name": "com.msgbyte.genshin",
-    "url": "/plugins/com.msgbyte.genshin/index.js",
-    "icon": "/plugins/com.msgbyte.genshin/assets/icon.jpg",
-    "version": "0.0.0",
-    "author": "msgbyte",
-    "description": "Add Genshin-related entertainment capabilities to Tailchat",
-    "description.zh-CN": "为Tailchat增加原神相关的娱乐能力",
-    "requireRestart": true
-  },
-  {
     "label": "Miaolang",
     "label.zh-CN": "喵语言",
     "name": "com.msgbyte.miaolang",
@@ -81,67 +34,6 @@
     "requireRestart": false
   },
   {
-    "label": "Listen Music Online",
-    "label.zh-CN": "在线听音乐",
-    "name": "com.msgbyte.music",
-    "url": "/plugins/com.msgbyte.music/index.js",
-    "icon": "/plugins/com.msgbyte.music/assets/icon.png",
-    "version": "0.0.0",
-    "author": "moonrailgun",
-    "description": "Provide online music listening service, the content comes from the Internet",
-    "description.zh-CN": "提供在线听音乐服务，内容来自网络",
-    "requireRestart": true
-  },
-  {
-    "label": "Snapdrop",
-    "label.zh-CN": "隔空投送",
-    "name": "com.msgbyte.snapdrop",
-    "url": "/plugins/com.msgbyte.snapdrop/index.js",
-    "icon": "/plugins/com.msgbyte.snapdrop/assets/icon.png",
-    "documentUrl": "/plugins/com.msgbyte.snapdrop/README.md",
-    "version": "0.0.0",
-    "author": "msgbyte",
-    "description": "Snapdrop —— Send files and messages on the same network",
-    "description.zh-CN": "隔空投送 —— 在同一网络发送文件与消息",
-    "requireRestart": false
-  },
-  {
-    "label": "Genshin Theme",
-    "label.zh-CN": "原神主题",
-    "name": "com.msgbyte.theme.genshin",
-    "url": "/plugins/com.msgbyte.theme.genshin/index.js",
-    "icon": "/plugins/com.msgbyte.theme.genshin/assets/icon.jpg",
-    "version": "0.0.0",
-    "author": "msgbyte",
-    "description": "Genshin Theme",
-    "description.zh-CN": "原神主题",
-    "documentUrl": "/plugins/com.msgbyte.theme.genshin/README.md",
-    "requireRestart": false
-  },
-  {
-    "label": "Hatsune Miku Theme",
-    "label.zh-CN": "Miku初音未来主题",
-    "name": "com.msgbyte.theme.miku",
-    "url": "/plugins/com.msgbyte.theme.miku/index.js",
-    "version": "0.0.0",
-    "author": "msgbyte",
-    "description": "Hatsune Miku theme, supports light and dark colors",
-    "description.zh-CN": "初音未来主题，支持亮色与暗色",
-    "requireRestart": false
-  },
-  {
-    "label": "Tool frog!",
-    "label.zh-CN": "工具哇！",
-    "name": "com.msgbyte.toolwa",
-    "url": "/plugins/com.msgbyte.toolwa/index.js",
-    "icon": "/plugins/com.msgbyte.toolwa/assets/icon.png",
-    "version": "0.0.0",
-    "author": "msgbyte",
-    "description": "Tool frog —— online tools",
-    "description.zh-CN": "工具哇 —— 在线小工具",
-    "requireRestart": false
-  },
-  {
     "label": "User Location",
     "label.zh-CN": "用户地理位置",
     "name": "com.msgbyte.user.location",
@@ -150,28 +42,6 @@
     "author": "moonrailgun",
     "description": "Add geographic location records for user information",
     "description.zh-CN": "为用户信息增加地理位置记录",
-    "requireRestart": true
-  },
-  {
-    "label": "wenshushu",
-    "name": "com.msgbyte.wenshushu",
-    "url": "/plugins/com.msgbyte.wenshushu/index.js",
-    "icon": "/plugins/com.msgbyte.wenshushu/assets/icon.png",
-    "version": "0.0.0",
-    "author": "moonrailgun",
-    "description": "Quickly open Wenshushu in the chat input box to support file transfer",
-    "description.zh-CN": "在聊天输入框快捷打开 文叔叔 以支持传输文件",
-    "requireRestart": true
-  },
-  {
-    "label": "wormhole",
-    "name": "com.msgbyte.wormhole",
-    "url": "/plugins/com.msgbyte.wormhole/index.js",
-    "icon": "/plugins/com.msgbyte.wormhole/assets/icon.webp",
-    "version": "0.0.0",
-    "author": "moonrailgun",
-    "description": "Quickly open wormhole in the chat input box to support file transfer",
-    "description.zh-CN": "在聊天输入框快捷打开 wormhole 以支持传输文件",
     "requireRestart": true
   },
   {
@@ -195,15 +65,6 @@
     "description": "Used to integrate third-party applications in groups",
     "description.zh-CN": "用于在群组中集成第三方应用",
     "requireRestart": false
-  },
-  {
-    "label": "sakana-widget",
-    "name": "com.msgbyte.widget.sakana",
-    "url": "/plugins/com.msgbyte.widget.sakana/index.js",
-    "icon": "/plugins/com.msgbyte.widget.sakana/assets/icon.png",
-    "version": "0.0.0",
-    "author": "moonrailgun",
-    "description": "Add sakana widget in tailchat"
   },
   {
     "label": "AI Assistant",
