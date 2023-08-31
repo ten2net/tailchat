@@ -1,0 +1,9 @@
+{
+  "label": "cn.e-u.aidialog",
+  "name": "cn.e-u.aidialog",
+  "url": "/plugins/cn.e-u.aidialog/index.js",
+  "version": "0.0.0",
+  "author": "huye",
+  "description": "aidialog",
+  "requireRestart": true
+}

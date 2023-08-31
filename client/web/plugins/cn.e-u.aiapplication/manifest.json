@@ -1,0 +1,9 @@
+{
+  "label": "cn.e-u.aiapplication",
+  "name": "cn.e-u.aiapplication",
+  "url": "/plugins/cn.e-u.aiapplication/index.js",
+  "version": "0.0.0",
+  "author": "huye",
+  "description": "aiapplication",
+  "requireRestart": true
+}
