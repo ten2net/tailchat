@@ -94,7 +94,7 @@ export const LoginView: React.FC = React.memo(() => {
     <div className="w-96 text-white relative">
       <div className="mb-4 text-2xl">
         {t('登录 {{serverName}}', {
-          serverName: serverName || 'Tailchat',
+          serverName: serverName || 'CC-Talk',
         })}
       </div>
 
@@ -162,8 +162,8 @@ export const LoginView: React.FC = React.memo(() => {
           return <Component key={name} />;
         })}
       </div>
-
-      <div className="absolute bottom-4 left-0 space-x-2">
+      
+      {/* <div className="absolute bottom-4 left-0 space-x-2">
         <IconBtn
           icon="mdi:cog"
           shape="square"
@@ -171,7 +171,7 @@ export const LoginView: React.FC = React.memo(() => {
         />
 
         <LanguageSelect size="middle" />
-      </div>
+      </div> */}
     </div>
   );
 });

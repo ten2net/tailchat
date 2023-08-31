@@ -46,7 +46,7 @@ withOnline.args = {
 export const withImage = Template.bind({});
 withImage.args = {
   name: 'Anonymous',
-  src: 'http://dummyimage.com/50x50',
+  src: '/images/avatar/default-avatar.png',
 };
 
 const CombinedTemplate: ComponentStory<typeof CombinedAvatar> = (args) => (
@@ -61,7 +61,7 @@ combined1.args = {
   items: [
     {
       name: 'Anonymous',
-      src: 'http://dummyimage.com/50x50',
+      src: '/images/avatar/default-avatar.png',
     },
   ],
 };
@@ -72,7 +72,7 @@ combined2.args = {
   items: [
     {
       name: 'Anonymous',
-      src: 'http://dummyimage.com/50x50',
+      src: '/images/avatar/default-avatar.png',
     },
     {
       name: 'Anonymous',
@@ -86,11 +86,11 @@ combined3.args = {
   items: [
     {
       name: 'Anonymous',
-      src: 'http://dummyimage.com/50x50',
+      src: '/images/avatar/default-avatar.png',
     },
     {
       name: 'Anonymous',
-      src: 'http://dummyimage.com/50x50',
+      src: '/images/avatar/default-avatar.png',
     },
     {
       name: 'Anonymous',
@@ -104,11 +104,11 @@ combined4.args = {
   items: [
     {
       name: 'Anonymous',
-      src: 'http://dummyimage.com/50x50',
+      src: '/images/avatar/default-avatar.png',
     },
     {
       name: 'Anonymous',
-      src: 'http://dummyimage.com/50x50',
+      src: '/images/avatar/default-avatar.png',
     },
     {
       name: 'Anonymous',

@@ -196,7 +196,7 @@ class OIDCService extends TcService {
                   )
                 );
               } else {
-                this.renderError(res, '未知的操作');
+                this.renderError(res, 'Unknown operation');
               }
             } catch (err) {
               this.renderError(res, err);

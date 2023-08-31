@@ -155,7 +155,7 @@ export const SystemConfig: React.FC = React.memo(() => {
                 value={serverName}
                 onChange={(val) => setServerName(val)}
                 onBlur={() => saveServerName()}
-                placeholder="Tailchat"
+                placeholder="CC-TALK"
               />
             </Form.Item>
 
@@ -222,7 +222,7 @@ export const SystemConfig: React.FC = React.memo(() => {
               field="link"
               tooltip={t('custom.config.announcementLinkTip')}
             >
-              <Input placeholder="https://tailchat.msgbyte.com/" />
+              <Input />
             </Form.Item>
             <Form.Item label={' '}>
               <Button htmlType="submit">{t('tushan.common.submit')}</Button>

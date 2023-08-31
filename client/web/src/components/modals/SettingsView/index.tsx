@@ -47,11 +47,11 @@ export const SettingsView: React.FC<SettingsViewProps> = React.memo((props) => {
           title: t('服务状态'),
           content: <SettingsStatus />,
         },
-        {
+        /** {
           type: 'item',
           title: t('性能统计'),
           content: <SettingsPerformance />,
-        },
+        },*/
         {
           type: 'item',
           title: t('关于'),
@@ -59,14 +59,14 @@ export const SettingsView: React.FC<SettingsViewProps> = React.memo((props) => {
         },
       ],
     };
-    if (isDevelopment) {
-      // 仅用于开发环境
-      common.children.push({
-        type: 'item',
-        title: t('调试'),
-        content: <SettingsDebug />,
-      });
-    }
+    /** if (isDevelopment) {
+       // 仅用于开发环境
+       common.children.push({
+         type: 'item',
+         title: t('调试'),
+         content: <SettingsDebug />,
+       });
+     }*/
 
     const more: SidebarViewMenuItem[] = pluginCustomPanel
       .filter((p) => p.position === 'setting')

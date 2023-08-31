@@ -1,0 +1,9 @@
+{
+  "label": "海军主题",
+  "name": "cn.e-u.theme.navy",
+  "url": "/plugins/cn.e-u.theme.navy/index.js",
+  "version": "0.0.0",
+  "author": "hekaiji",
+  "description": "海军主题",
+  "requireRestart": false
+}

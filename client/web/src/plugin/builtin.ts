@@ -95,6 +95,17 @@ export const builtinPlugins: PluginManifest[] = _compact([
     'description.zh-CN': '增加预获取的图标，适用于内网环境',
     requireRestart: true,
   },
+  {
+    label: 'Navy Theme',
+    'label.zh-CN': '海军主题',
+    name: 'cn.e-u.theme.navy',
+    url: '/plugins/cn.e-u.theme.navy/index.js',
+    version: '0.0.0',
+    author: 'hekaiji',
+    description: 'Navy Theme',
+    'description.zh-CN': '海军主题',
+    requireRestart: false,
+  },
   // isOffical
   isOffical && {
     label: 'Posthog',
