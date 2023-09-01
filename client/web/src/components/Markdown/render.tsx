@@ -1,11 +1,11 @@
-import { markAbsoluteUrl } from '@/utils/url-helper';
+import { makeAbsoluteUrl } from '@/utils/url-helper';
 import React, { useCallback, useMemo } from 'react';
-import { isValidStr } from 'tailchat-shared';
-import { Loadable } from './Loadable';
+import { isValidStr, parseUrlStr } from 'tailchat-shared';
+import { Loadable } from '../Loadable';
 import { Image } from 'tailchat-design';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
-import './Markdown.less';
+import './render.less';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -17,11 +17,12 @@ export const Markdown: React.FC<{
 }> = React.memo(({ raw, baseUrl }) => {
   const transformUrl = useCallback(
     (url: string) => {
+      url = parseUrlStr(url);
       if (!isValidStr(baseUrl)) {
         return url;
       }
 
-      return new URL(url, markAbsoluteUrl(baseUrl)).href;
+      return new URL(url, makeAbsoluteUrl(baseUrl)).href;
     },
     [baseUrl]
   );
@@ -35,10 +36,11 @@ export const Markdown: React.FC<{
     () => ({
       img: (props) => (
         <Image
-          src={props.src}
-          preview={true}
+          style={props.style}
           width={props.width}
           height={props.height}
+          src={props.src}
+          preview={true}
         />
       ),
     }),
