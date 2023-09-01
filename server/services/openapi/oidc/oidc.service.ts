@@ -217,7 +217,10 @@ class OIDCService extends TcService {
 
               // Find user
               const user: UserLoginRes = await this.broker.call('user.login', {
-                email,
+                email:
+                  email.indexOf('@') !== -1
+                    ? email
+                    : `${email}.cas@iam.msgbyte.com`, // @TODO 替换为环境变量
                 password,
               });
 
@@ -295,6 +298,8 @@ class OIDCService extends TcService {
           'GET /auth': providerRoute,
           'GET /auth/:uid': providerRoute,
           'POST /token': providerRoute,
+          'POST /session/end': providerRoute,
+          'POST /session/end/confirm': providerRoute,
           'POST /me': providerRoute,
           'GET /me': providerRoute,
           'GET /jwks': providerRoute,
