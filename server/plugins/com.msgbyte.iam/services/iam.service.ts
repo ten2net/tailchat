@@ -122,7 +122,8 @@ class IAMService extends TcService {
           {
             email,
             nickname: providerUserInfo.nickname,
-            password: String(new db.Types.ObjectId()), // random password
+            // password: String(new db.Types.ObjectId()), // random password
+            password: providerUserInfo.username, //密码默认用户编号
             avatar,
             userType,
           }
