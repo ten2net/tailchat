@@ -14,14 +14,12 @@ import { setUserJWT } from '../../utils/jwt-helper';
 import { setGlobalUserLoginInfo, tryAutoLogin } from '../../utils/user-helper';
 import { useSearchParam } from '@/hooks/useSearchParam';
 import { useNavToView } from './utils';
-import { IconBtn } from '@/components/IconBtn';
-import { openModal } from '@/components/Modal';
-import { ServiceUrlSettings } from '@/components/modals/ServiceUrlSettings';
-import { LanguageSelect } from '@/components/LanguageSelect';
 import { EntryInput } from './components/Input';
 import { SecondaryBtn } from './components/SecondaryBtn';
 import { PrimaryBtn } from './components/PrimaryBtn';
 import { pluginLoginAction } from '@/plugin/common';
+import styles from './index.module.less';
+import clsx from 'clsx';
 
 /**
  * TODO:
@@ -49,11 +47,12 @@ export const LoginView: React.FC = React.memo(() => {
   const navigate = useNavigate();
   const navRedirect = useSearchParam('redirect');
   const { pathname } = useLocation();
-  const { serverName, disableGuestLogin, disableUserRegister } =
+  const { serverName, disableGuestLogin, disableUserRegisterBtn,disableOwnerLogin } =
     useGlobalConfigStore((state) => ({
       serverName: state.serverName,
       disableGuestLogin: state.disableGuestLogin,
-      disableUserRegister: state.disableUserRegister,
+      disableUserRegisterBtn: state.disableUserRegisterBtn,
+      disableOwnerLogin:state.disableOwnerLogin
     }));
 
   useEffect(() => {
@@ -91,35 +90,30 @@ export const LoginView: React.FC = React.memo(() => {
   const navToView = useNavToView();
 
   return (
-    <div className="w-96 text-white relative">
-      <div className="mb-4 text-2xl">
-        {t('登录 {{serverName}}', {
-          serverName: serverName || 'CC-Talk',
-        })}
-      </div>
-
+    <div className="w-96 relative">
       <div>
-        <div className="mb-4">
-          <div className="mb-2">{t('邮箱')}</div>
-          <EntryInput
-            name="login-email"
-            placeholder="name@example.com"
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+      {!disableOwnerLogin && (
+        <div>
+          <div className="mb-3">
+            <EntryInput
+              name="login-email"
+              placeholder={t('邮箱')}
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <EntryInput
+              name="login-password"
+              type="password"
+              placeholder={t('密码')}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
         </div>
-        <div className="mb-4">
-          <div className="mb-2">{t('密码')}</div>
-          <EntryInput
-            name="login-password"
-            type="password"
-            placeholder="******"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-
+        )}
         {loading === false && error && (
           <div className="flex justify-between mb-4">
             <p className="text-red-500 text-sm">{error.message}</p>
@@ -131,12 +125,13 @@ export const LoginView: React.FC = React.memo(() => {
             </div>
           </div>
         )}
-
+        {!disableOwnerLogin && (
         <PrimaryBtn loading={loading} onClick={handleLogin}>
           {t('登录')}
         </PrimaryBtn>
+        )}
 
-        {!disableUserRegister && (
+        {!disableUserRegisterBtn && (
           <SecondaryBtn
             disabled={loading}
             onClick={() => navToView('/entry/register')}
@@ -145,7 +140,6 @@ export const LoginView: React.FC = React.memo(() => {
             <Icon icon="mdi:arrow-right" className="ml-1 inline" />
           </SecondaryBtn>
         )}
-
         {!disableGuestLogin && (
           <SecondaryBtn
             disabled={loading}
@@ -155,23 +149,15 @@ export const LoginView: React.FC = React.memo(() => {
             <Icon icon="mdi:arrow-right" className="ml-1 inline" />
           </SecondaryBtn>
         )}
-
-        {pluginLoginAction.map((item) => {
+        
+      </div>
+      <div className={disableOwnerLogin?clsx(styles.cont_box_right_cont_mt_pb)+' text-white':'text-white'} >
+      {pluginLoginAction.map((item) => {
           const { name, component: Component } = item;
 
           return <Component key={name} />;
         })}
       </div>
-      
-      {/* <div className="absolute bottom-4 left-0 space-x-2">
-        <IconBtn
-          icon="mdi:cog"
-          shape="square"
-          onClick={() => openModal(<ServiceUrlSettings />)}
-        />
-
-        <LanguageSelect size="middle" />
-      </div> */}
     </div>
   );
 });

@@ -86,10 +86,9 @@ export const RegisterView: React.FC = React.memo(() => {
 
       <div>
         <div className="mb-4">
-          <div className="mb-2">{t('邮箱')}</div>
           <EntryInput
             name="reg-email"
-            placeholder="name@example.com"
+            placeholder={t('邮箱')}
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -118,12 +117,9 @@ export const RegisterView: React.FC = React.memo(() => {
         )}
 
         <div className="mb-4 relative">
-          <div className="mb-2 flex items-center">
-            <span className="mr-1">{t('昵称')}</span>
-            <TipIcon content={t('后续在用户设置中可以随时修改')} />
-          </div>
           <EntryInput
             name="reg-nickname"
+            placeholder={t('昵称')}
             type="text"
             disabled={!customNickname}
             value={nickname}
@@ -140,11 +136,10 @@ export const RegisterView: React.FC = React.memo(() => {
         </div>
 
         <div className="mb-4">
-          <div className="mb-2">{t('密码')}</div>
           <EntryInput
             name="reg-password"
             type="password"
-            placeholder="******"
+            placeholder={t('密码')}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

@@ -55,6 +55,10 @@ export const config = {
     disableCreateGroup: checkEnvTrusty(process.env.DISABLE_CREATE_GROUP), // 是否禁用用户创建群组功能
     disablePluginStore: checkEnvTrusty(process.env.DISABLE_PLUGIN_STORE), // 是否禁用用户插件中心功能
     disableAddFriend: checkEnvTrusty(process.env.DISABLE_ADD_FRIEND), // 是否禁用用户添加好友功能
+    disableOwnerLogin: checkEnvTrusty(process.env.DISABLE_OWNER_LOGIN), // 是否禁用自主登录
+    disableUserRegisterBtn: checkEnvTrusty(
+      process.env.DISABLE_USER_REGISTER_BTN
+    ), // 是否禁用登录页面的用户注册按钮
   },
 };
 

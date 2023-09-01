@@ -51,6 +51,15 @@ export interface GlobalConfig {
    */
   disableAddFriend?: boolean;
 
+  /**
+   * 是否禁用自主登录
+   */
+  disableOwnerLogin?: boolean;
+  /**
+   * 是否禁用登录页面的用户注册按钮
+   */
+  disableUserRegisterBtn?: boolean;
+
   announcement?:
     | false
     | {
