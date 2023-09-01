@@ -7,7 +7,7 @@ import {
   setUserJWT,
   useIsMobile,
 } from '@capital/common';
-import { Divider, Image, Tooltip } from '@capital/component';
+import { Tooltip } from '@capital/component';
 import { request } from './request';
 import { Translate } from './translate';
 
@@ -58,11 +58,9 @@ export const IAMAction: React.FC = React.memo(() => {
   if (loading) {
     return null;
   }
-
   if (Array.isArray(strategies) && strategies.length > 0) {
     return (
       <div>
-        <Divider>{Translate.iamLogin}</Divider>
         {isMobile ? (
           <div
             style={{ textAlign: 'center', opacity: 0.8, fontSize: '0.75rem' }}
@@ -72,26 +70,16 @@ export const IAMAction: React.FC = React.memo(() => {
         ) : (
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             {strategies.map((s) => (
-              <Tooltip key={s.name} title={s.name}>
-                <Image
-                  style={{
-                    width: 40,
-                    height: 40,
-                    cursor: 'pointer',
-                    borderRadius: 20,
-                  }}
-                  src={s.icon}
-                  onClick={async () => {
+              <Tooltip key={s.name} title="统一身份认证登录">
+                <button style={{width:'318px',height:'63px',background:'#6676ff',fontSize:'18px',borderRadius:'50px'}} id='casLoginBtn1' onClick={async () => {
                     if (s.type === 'oauth') {
                       const { data: url } = await request.get(
                         `${s.name}.loginUrl`
                       );
-
                       const win = window.open(url, 'square', 'frame=true');
                       newWin.current = win;
                     }
-                  }}
-                />
+                  }}>数字校园统一身份认证登录</button>
               </Tooltip>
             ))}
           </div>
