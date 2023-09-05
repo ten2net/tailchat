@@ -27,7 +27,7 @@ register message interpreter
 
 ```typescript
 regMessageInterpreter({
-   name: 'Meow language translation',
+   name: 'Mars language translation',
    explainMessage(message: string) {
      // Meow -> Human
      if (!isMiao(message)) {
@@ -59,7 +59,7 @@ Register chat input box operation
 
 ```typescript
 regChatInputAction({
-   label: 'Meow words',
+   label: 'Mars words',
    onClick: (actions) => {
      openModal(createElement(SendMiaoModal, { actions }));
    },
