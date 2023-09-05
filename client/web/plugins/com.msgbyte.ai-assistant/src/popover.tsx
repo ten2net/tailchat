@@ -64,7 +64,7 @@ export const AssistantPopover: React.FC<{
       // });
 
       const { data } = await axios.post(
-        'http://192.168.15.130:8001/v1/chat-messages',
+        'http://192.168.128.68:8001/v1/chat-messages',
         {
           inputs: {},
           query: question,
