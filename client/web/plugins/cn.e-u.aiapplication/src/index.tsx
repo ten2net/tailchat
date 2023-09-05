@@ -4,7 +4,7 @@ import { useIconIsShow } from '../../../../../server/plugins/com.msgbyte.livekit
 import React from 'react';
 
 const PLUGIN_ID = 'cn.e-u.aiapplication';
-const PLUGIN_NAME = 'AI应用';
+const PLUGIN_NAME = 'AI服务';
 
 console.log(`Plugin ${PLUGIN_NAME}(${PLUGIN_ID}) is loaded`);
 console.log(`Plugin ${PLUGIN_NAME}(${PLUGIN_ID}) is loaded`);
