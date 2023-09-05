@@ -1,7 +1,7 @@
 version: "3.3"
 
 services:
-  # Tailchat Core Services
+  # CCTALKS Core Services
   service-core:
     build:
       context: .
@@ -112,7 +112,7 @@ services:
 
 networks:
   internal:
-    name: tailchat-internal
+    name: cctalks-internal
 
 volumes:
   data:
