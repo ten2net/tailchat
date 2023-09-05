@@ -44,7 +44,7 @@ const MessageQuote: React.FC<{ payload: ChatMessage }> = React.memo(
 
     return (
       <div className="chat-message-item_quote border-l-4 border-black border-opacity-20 pl-2 opacity-80">
-        {t('回复')} <UserName userId={String(quote.author)} />:{' '}
+        <UserName userId={String(quote.author)} />:{' '}
         <span>{getMessageRender(quote.content)}</span>
       </div>
     );
@@ -80,134 +80,139 @@ const NormalMessage: React.FC<ChatMessageItemProps> = React.memo((props) => {
     payload.isLocal === true || payload.sendFailed === true;
 
   return (
-    <div
-      className={clsx(
-        'chat-message-item flex px-2 mobile:px-0 group relative select-text',
-        {
-          'bg-black bg-opacity-10': isActionBtnActive,
-          'hover:bg-black hover:bg-opacity-5': !isActionBtnActive,
-        }
-      )}
-      data-message-id={payload._id}
-    >
-      {/* 头像 */}
-      <div className="w-18 mobile:w-14 flex items-start justify-center pt-0.5">
-        {showAvatar ? (
-          <Popover
-            content={
-              !_isEmpty(userInfo) && (
-                <UserPopover userInfo={userInfo as UserBaseInfo} />
-              )
-            }
-            placement="top"
-            trigger="click"
-          >
-            <Avatar
-              className="cursor-pointer"
-              size={40}
-              src={userInfo.avatar}
-              name={userInfo.nickname}
-            />
-          </Popover>
-        ) : (
-          <div className="hidden group-hover:block opacity-40">
-            {formatShortTime(payload.createdAt)}
-          </div>
-        )}
-      </div>
-
-      {/* 主体 */}
+    <div>
       <div
-        className="flex flex-col flex-1 overflow-auto group"
-        onContextMenu={stopPropagation}
+        className={clsx(
+          'chat-message-item flex px-2 mobile:px-0 group relative select-text',
+          {
+            'bg-black bg-opacity-10': isActionBtnActive,
+            'hover:bg-black hover:bg-opacity-5': !isActionBtnActive,
+          }
+        )}
+        data-message-id={payload._id}
       >
-        {showAvatar && (
-          <div className="flex items-center">
-            <div className="font-bold">
-              {userInfo.nickname ?? <span>&nbsp;</span>}
-            </div>
-            <div className="hidden group-hover:block opacity-40 ml-1 text-sm">
+        {/* 头像 */}
+        <div className="w-18 mobile:w-14 flex items-start justify-center pt-0.5">
+          {showAvatar ? (
+            <Popover
+              content={
+                !_isEmpty(userInfo) && (
+                  <UserPopover userInfo={userInfo as UserBaseInfo} />
+                )
+              }
+              placement="top"
+              trigger="click"
+            >
+              <Avatar
+                className="cursor-pointer"
+                size={40}
+                src={userInfo.avatar}
+                name={userInfo.nickname}
+              />
+            </Popover>
+          ) : (
+            <div className="hidden group-hover:block opacity-40">
               {formatShortTime(payload.createdAt)}
             </div>
+          )}
+        </div>
+
+        {/* 主体 */}
+        <div
+          className="flex flex-col flex-1 overflow-auto group"
+          onContextMenu={stopPropagation}
+        >
+          {showAvatar && (
+            <div className="flex items-center">
+              <div className="font-bold">
+                {userInfo.nickname ?? <span>&nbsp;</span>}
+              </div>
+              <div className="hidden group-hover:block opacity-40 ml-1 text-sm">
+                {formatShortTime(payload.createdAt)}
+              </div>
+            </div>
+          )}
+
+          {/* 消息内容 */}
+          <AutoFolder
+            maxHeight={340}
+            backgroundColor="var(--tc-content-background-color)"
+            showFullText={
+              <div className="inline-block rounded-full bg-white dark:bg-black opacity-80 py-2 px-3 hover:opacity-100">
+                {t('点击展开更多')}
+              </div>
+            }
+          >
+            <div className="chat-message-item_body leading-6 break-words">
+              <span>{getMessageRender(payload.content)}</span>
+
+              {payload.sendFailed === true && (
+                <Icon
+                  className="inline-block ml-1"
+                  icon="emojione:cross-mark-button"
+                />
+              )}
+
+              {/* 解释器按钮 */}
+              {useRenderPluginMessageInterpreter(payload.content)}
+            </div>
+          </AutoFolder>
+
+          {/* 额外渲染 */}
+          <div>
+            {pluginMessageExtraParsers.map((parser) => (
+              <React.Fragment key={parser.name}>
+                {parser.render(payload)}
+              </React.Fragment>
+            ))}
+          </div>
+
+          {/* 消息反应 */}
+          {reactions}
+        </div>
+
+        {/* 操作 */}
+        {!disableOperate && (
+          <div
+            className={clsx(
+              'bg-white dark:bg-black rounded absolute right-2 cursor-pointer -top-3 shadow-sm flex',
+              {
+                'opacity-0 group-hover:opacity-100 bg-opacity-80 hover:bg-opacity-100':
+                  !isActionBtnActive,
+                'opacity-100 bg-opacity-100': isActionBtnActive,
+              }
+            )}
+          >
+            <TcPopover
+              overlayClassName="chat-message-item_action-popover"
+              content={emojiAction}
+              placement="bottomLeft"
+              trigger={['click']}
+              onOpenChange={setIsActionBtnActive}
+            >
+              <div>
+                <MessageActionIcon icon="mdi:emoticon-happy-outline" />
+              </div>
+            </TcPopover>
+
+            <Dropdown
+              menu={moreActions}
+              placement="bottomLeft"
+              trigger={['click']}
+              onOpenChange={setIsActionBtnActive}
+            >
+              <div>
+                <MessageActionIcon icon="mdi:dots-horizontal" />
+              </div>
+            </Dropdown>
           </div>
         )}
-
-        {/* 消息内容 */}
-        <AutoFolder
-          maxHeight={340}
-          backgroundColor="var(--tc-content-background-color)"
-          showFullText={
-            <div className="inline-block rounded-full bg-white dark:bg-black opacity-80 py-2 px-3 hover:opacity-100">
-              {t('点击展开更多')}
-            </div>
-          }
-        >
-          <div className="chat-message-item_body leading-6 break-words">
-            <MessageQuote payload={payload} />
-
-            <span>{getMessageRender(payload.content)}</span>
-
-            {payload.sendFailed === true && (
-              <Icon
-                className="inline-block ml-1"
-                icon="emojione:cross-mark-button"
-              />
-            )}
-
-            {/* 解释器按钮 */}
-            {useRenderPluginMessageInterpreter(payload.content)}
-          </div>
-        </AutoFolder>
-
-        {/* 额外渲染 */}
-        <div>
-          {pluginMessageExtraParsers.map((parser) => (
-            <React.Fragment key={parser.name}>
-              {parser.render(payload)}
-            </React.Fragment>
-          ))}
-        </div>
-
-        {/* 消息反应 */}
-        {reactions}
       </div>
 
-      {/* 操作 */}
-      {!disableOperate && (
-        <div
-          className={clsx(
-            'bg-white dark:bg-black rounded absolute right-2 cursor-pointer -top-3 shadow-sm flex',
-            {
-              'opacity-0 group-hover:opacity-100 bg-opacity-80 hover:bg-opacity-100':
-                !isActionBtnActive,
-              'opacity-100 bg-opacity-100': isActionBtnActive,
-            }
-          )}
-        >
-          <TcPopover
-            overlayClassName="chat-message-item_action-popover"
-            content={emojiAction}
-            placement="bottomLeft"
-            trigger={['click']}
-            onOpenChange={setIsActionBtnActive}
-          >
-            <div>
-              <MessageActionIcon icon="mdi:emoticon-happy-outline" />
-            </div>
-          </TcPopover>
-
-          <Dropdown
-            menu={moreActions}
-            placement="bottomLeft"
-            trigger={['click']}
-            onOpenChange={setIsActionBtnActive}
-          >
-            <div>
-              <MessageActionIcon icon="mdi:dots-horizontal" />
-            </div>
-          </Dropdown>
-        </div>
-      )}
+      {/* 回复引用 */}
+      <div className="flex flex-col flex-1 overflow-auto group chat-message-item-quote-box">
+        <MessageQuote payload={payload} />
+      </div>
     </div>
   );
 });
