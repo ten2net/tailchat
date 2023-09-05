@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "moonrailgun",
-  "description": "为Tailchat增加声网音视频通信功能",
+  "description": "为TALKS增加声网音视频通信功能",
   "license": "MIT",
   "private": true,
   "scripts": {
