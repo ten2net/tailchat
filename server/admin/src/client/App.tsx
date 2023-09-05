@@ -41,7 +41,7 @@ function App() {
   return (
     <Tushan
       basename="/admin"
-      header={'CC-Talk Admin'}
+      header={'TALKS Admin'}
       footer={''}
       dashboard={<Dashboard />}
       dataProvider={dataProvider}

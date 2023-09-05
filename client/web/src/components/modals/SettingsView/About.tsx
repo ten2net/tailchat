@@ -37,7 +37,7 @@ export const SettingsAbout: React.FC = React.memo(() => {
       />
 
       <Paragraph>
-        <Text className="font-bold">CC-Talk</Text>
+        <Text className="font-bold">TALKS</Text>
         <Text>: {t('属于所有人的开源聊天工具')} </Text>
       </Paragraph>
       <Paragraph>{t('可供高度自定义的聊天工具')}</Paragraph>
