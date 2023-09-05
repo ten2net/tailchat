@@ -25,6 +25,10 @@ import {
 import { EmailVerify } from '../EmailVerify';
 import { ModifyPassword } from '../ModifyPassword';
 import { isBuiltinEmail } from '@/utils/user-helper';
+import {
+  useGlobalConfigStore
+} from 'tailchat-shared';
+import axios from 'axios';
 
 export const SettingsAccount: React.FC = React.memo(() => {
   const userInfo = useUserInfo();
@@ -78,10 +82,19 @@ export const SettingsAccount: React.FC = React.memo(() => {
     const key = openModal(<ModifyPassword onSuccess={() => closeModal(key)} />);
   }, []);
 
+  const { casLogoutUrl } =
+    useGlobalConfigStore((state) => ({
+      casLogoutUrl: state.casLogoutUrl
+    }));
   // 登出
   const handleLogout = useCallback(async () => {
     await setUserJWT(null);
-
+    if(casLogoutUrl!=null && casLogoutUrl!=''){
+      const locationUrl = window.location.href;
+      // 登出cas
+      window.location.replace(casLogoutUrl+`?service=`+locationUrl);
+      return;
+    }
     window.location.replace('/'); // 重载页面以清空所有状态
   }, []);
 

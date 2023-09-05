@@ -63,6 +63,7 @@ export const config = {
       process.env.DISABLE_USER_REGISTER_BTN
     ), // 是否禁用登录页面的用户注册按钮
   },
+  casLogoutUrl: process.env.IAM_CAS_LOGOUT_URL,
 };
 
 export const builtinAuthWhitelist = [
