@@ -10,7 +10,7 @@ export const Translate = {
     'en-US': 'Skip Tour',
   }),
   step1: localTrans({
-    'zh-CN': '欢迎使用 TALKS, 一个插件化的开源IM应用！',
+    'zh-CN': '欢迎使用 TALKS, 在此可自主创建AI沟通空间！',
     'en-US': 'Welcome to TALKS, a pluginify open source IM application!',
   }),
   step2: localTrans({
