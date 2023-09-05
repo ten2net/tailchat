@@ -48,7 +48,7 @@ export const InboxSidebar: React.FC = React.memo(() => {
           key={item._id}
           title={title}
           desc={getMessageRender(payload.messageSnippet ?? '')}
-          source={'CC-Talk'}
+          source={'TALKS'}
           readed={item.readed}
           to={buildLink(item._id)}
         />
@@ -65,7 +65,7 @@ export const InboxSidebar: React.FC = React.memo(() => {
           key={item._id}
           title={title}
           desc={t('点击查看详情')}
-          source={payload.source ?? 'CC-Talk'}
+          source={payload.source ?? 'TALKS'}
           readed={item.readed}
           to={buildLink(item._id)}
         />
@@ -83,7 +83,7 @@ export const InboxSidebar: React.FC = React.memo(() => {
           key={_item._id}
           title={preview.title}
           desc={preview.desc}
-          source={info.source ?? 'CC-Talk'}
+          source={info.source ?? 'TALKS'}
           readed={_item.readed}
           to={buildLink(_item._id)}
         />

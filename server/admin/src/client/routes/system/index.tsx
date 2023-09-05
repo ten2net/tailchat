@@ -155,7 +155,7 @@ export const SystemConfig: React.FC = React.memo(() => {
                 value={serverName}
                 onChange={(val) => setServerName(val)}
                 onBlur={() => saveServerName()}
-                placeholder="CC-TALK"
+                placeholder="TALKS"
               />
             </Form.Item>
 

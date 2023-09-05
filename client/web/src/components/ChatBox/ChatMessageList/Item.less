@@ -1,11 +1,4 @@
 .chat-message-item {
-  .chat-message-item_quote {
-    img {
-      max-height: 60px !important;
-      width: auto !important;
-    }
-  }
-
   .chat-message-reactions {
     .emoji-mart-emoji {
       display: flex;
@@ -19,7 +12,7 @@
       display: inline-block;
       margin: 0 4px;
 
-      > span {
+      >span {
         vertical-align: top;
       }
     }
@@ -41,4 +34,26 @@
       padding: 0;
     }
   }
+}
+
+.chat-message-item_quote {
+  margin-left: 100px;
+  margin-bottom: 20px;
+  border-left: none;
+  background-color: #eaf1f8;
+  border-radius: 5px;
+  padding: 6px;
+  width: fit-content;
+  margin-right: 8px;
+}
+
+.chat-message-item_quote {
+  img {
+    max-height: 60px !important;
+    width: auto !important;
+  }
+}
+
+.chat-message-item-quote-box {
+  margin-top: -5px;
 }

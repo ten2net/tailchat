@@ -10,13 +10,13 @@ export const Translate = {
     'en-US': 'Skip Tour',
   }),
   step1: localTrans({
-    'zh-CN': '欢迎使用 CC-Talk, 一个插件化的开源IM应用！',
-    'en-US': 'Welcome to CC-Talk, a pluginify open source IM application!',
+    'zh-CN': '欢迎使用 TALKS, 一个插件化的开源IM应用！',
+    'en-US': 'Welcome to TALKS, a pluginify open source IM application!',
   }),
   step2: localTrans({
-    'zh-CN': '这是导航栏, 在这里可以切换CC-Talk的各个主要页面。',
+    'zh-CN': '这是导航栏, 在这里可以切换TALKS的各个主要页面。',
     'en-US':
-      'This is the navigation bar, where you can switch between the main pages of CC-Talk.',
+      'This is the navigation bar, where you can switch between the main pages of TALKS.',
   }),
   step3: localTrans({
     'zh-CN': '这是个人信息入口，在这里可以访问您的好友、插件、以及私信等功能。',
@@ -41,12 +41,12 @@ export const Translate = {
       'This is the sidebar, used to toggle content. Will use it frequently in the future to switch between different panels.',
   }),
   step7: localTrans({
-    'zh-CN': '这是内容区，用于显示主要内容，也是CC-Talk展示内容的地方。',
+    'zh-CN': '这是内容区，用于显示主要内容，也是TALKS展示内容的地方。',
     'en-US':
-      'This is the content area, which is used to display the main content, and it is also where CC-Talk displays the content.',
+      'This is the content area, which is used to display the main content, and it is also where TALKS displays the content.',
   }),
   step8: localTrans({
-    'zh-CN': '欢迎使用CC-Talk系统。',
-    'en-US': 'Welcome to the CC-Talk system.',
+    'zh-CN': '欢迎使用TALKS系统。',
+    'en-US': 'Welcome to the TALKS system.',
   }),
 };

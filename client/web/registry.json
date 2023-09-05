@@ -6,8 +6,8 @@
     "url": "/plugins/com.msgbyte.biggerfont/index.js",
     "version": "0.0.0",
     "author": "moonrailgun",
-    "description": "Add the feature of enlarging the font size to Tailchat, which is convenient for different user",
-    "description.zh-CN": "为Tailchat增加放大字号的功能,方便不同用户群体",
+    "description": "Add the feature of enlarging the font size to TALKS, which is convenient for different user",
+    "description.zh-CN": "为TALKS增加放大字号的功能,方便不同用户群体",
     "requireRestart": true
   },
   {
@@ -23,13 +23,13 @@
   },
   {
     "label": "Miaolang",
-    "label.zh-CN": "喵语言",
+    "label.zh-CN": "火星文",
     "name": "com.msgbyte.miaolang",
     "url": "/plugins/com.msgbyte.miaolang/index.js",
     "version": "0.0.0",
     "author": "msgbyte",
-    "description": "It is allowed to send meow, and the two parties encrypt the conversation after installing the plugin. People who have not installed the plugin will see 'meow'",
-    "description.zh-CN": "允许发送喵语，安装插件后的双方加密对话，未安装插件的人看到的是 '喵'",
+    "description": "It is allowed to send mars, and the two parties encrypt the conversation after installing the plugin. People who have not installed the plugin will see '*'",
+    "description.zh-CN": "允许发送火星文，安装插件后的双方加密对话，未安装插件的人看到的是 '*'",
     "documentUrl": "/plugins/com.msgbyte.miaolang/README.md",
     "requireRestart": false
   },
@@ -73,7 +73,7 @@
     "icon": "/plugins/com.msgbyte.ai-assistant/assets/icon.png",
     "version": "0.0.0",
     "author": "moonrailgun",
-    "description": "Add chatgpt into Tailchat",
+    "description": "Add chatgpt into TALKS",
     "requireRestart": true
   },
   {
@@ -83,7 +83,7 @@
     "icon": "/plugins/cn.e-u.ccbots/assets/icon.png",
     "version": "0.0.0",
     "author": "wangf",
-    "description": "Add ccbots into Tailchat",
+    "description": "Add ccbots into TALKS",
     "requireRestart": true
   }
 ]

@@ -75,13 +75,13 @@ export const builtinPlugins: PluginManifest[] = _compact([
     'label.zh-CN': 'IAM 插件',
     name: 'com.msgbyte.iam',
     url: '{BACKEND}/plugins/com.msgbyte.iam/index.js',
-    documentUrl:
-      'https://tailchat.msgbyte.com/docs/advanced-usage/plugins/com.msgbyte.iam',
+    // documentUrl:
+    //   'https://tailchat.msgbyte.com/docs/advanced-usage/plugins/com.msgbyte.iam',
     version: '0.0.0',
     author: 'moonrailgun',
     description:
-      'Provide Tailchat with the function of conveniently accessing external account systems',
-    'description.zh-CN': '为Tailchat提供方便的接入外部账户系统的功能',
+      'Provide TALKS with the function of conveniently accessing external account systems',
+    'description.zh-CN': '为TALKS提供方便的接入外部账户系统的功能',
     requireRestart: true,
   },
   {
@@ -171,7 +171,7 @@ export const builtinPlugins: PluginManifest[] = _compact([
     icon: '/plugins/cn.e-u.aidialog/assets/icon.png',
     version: '0.0.0',
     author: 'huye',
-    description: 'Add ccbots into Tailchat',
+    description: 'Add ccbots into TALKS',
     requireRestart: true,
   },
   {
@@ -181,7 +181,7 @@ export const builtinPlugins: PluginManifest[] = _compact([
     icon: '/plugins/cn.e-u.aiapplication/assets/icon.png',
     version: '0.0.0',
     author: 'huye',
-    description: 'Add aiapplication into Tailchat',
+    description: 'Add aiapplication into TALKS',
     requireRestart: true,
   },
 ]);

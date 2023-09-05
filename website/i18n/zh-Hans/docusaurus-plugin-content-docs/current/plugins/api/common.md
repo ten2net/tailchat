@@ -27,9 +27,9 @@ regGroupPanel({
 
 ```typescript
 regMessageInterpreter({
-  name: '喵语翻译',
+  name: '火星文翻译',
   explainMessage(message: string) {
-    // 喵语 -> 人话
+    // 火星文 -> 人话
     if (!isMiao(message)) {
       return null;
     }
@@ -59,7 +59,7 @@ regMessageRender((message) => {
 
 ```typescript
 regChatInputAction({
-  label: '喵言喵语',
+  label: '发送火星文',
   onClick: (actions) => {
     openModal(createElement(SendMiaoModal, { actions }));
   },

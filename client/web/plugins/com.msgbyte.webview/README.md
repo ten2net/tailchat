@@ -1,6 +1,6 @@
 ## com.msgbyte.webview
 
-为 `Tailchat` 增加 `Webview` 能力
+为 `TALKS` 增加 `Webview` 能力
 
 ### Usage
 
