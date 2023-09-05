@@ -30,7 +30,7 @@ export const SettingsAbout: React.FC = React.memo(() => {
   return (
     <div className="select-text">
       <img
-        className="float-right select-none bg-black rounded-2xl bg-opacity-40 p-2"
+        className="float-right select-none rounded-2xl bg-opacity-40 p-2"
         width={128}
         height={128}
         src={logoUrl}
