@@ -71,7 +71,11 @@ export const IAMAction: React.FC = React.memo(() => {
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             {strategies.map((s) => (
               <Tooltip key={s.name} title="统一身份认证登录">
-                <button style={{width:'318px',height:'63px',background:'#6676ff',fontSize:'18px',borderRadius:'50px'}} id='casLoginBtn1' onClick={async () => {
+                <button
+                  // 按钮样式位置: client\web\src\routes\Entry\index.module.less
+                  style={{}}
+                  id="casLoginBtn1"
+                  onClick={async () => {
                     if (s.type === 'oauth') {
                       const { data: url } = await request.get(
                         `${s.name}.loginUrl`
@@ -79,7 +83,10 @@ export const IAMAction: React.FC = React.memo(() => {
                       const win = window.open(url, 'square', 'frame=true');
                       newWin.current = win;
                     }
-                  }}>数字校园统一身份认证登录</button>
+                  }}
+                >
+                  数字校园统一身份认证登录
+                </button>
               </Tooltip>
             ))}
           </div>
