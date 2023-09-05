@@ -87,7 +87,7 @@ class IAMService extends TcService {
         const username = providerUserInfo.username;
         const email =
           providerUserInfo.email ||
-          `${username}.${strategyName}@iam.msgbyte.com`;
+          `${username}.${strategyName}@` + (process.env.IAM_DOMAIN || `e-u.cn`);
 
         // 不存在记录，查找是否已经注册过，如果已经注册过需要绑定，如果没有注册过则创建账号并绑定用户关系
         const userInfo = await ctx.call('user.findUserByEmail', {
@@ -122,7 +122,8 @@ class IAMService extends TcService {
           {
             email,
             nickname: providerUserInfo.nickname,
-            password: String(new db.Types.ObjectId()), // random password
+            // password: String(new db.Types.ObjectId()), // random password
+            password: providerUserInfo.username, //密码默认用户编号
             avatar,
             userType,
           }

@@ -168,6 +168,11 @@ export class TcOIDCAdapter implements Adapter {
       application_type: 'web',
       grant_types: ['refresh_token', 'authorization_code'],
       redirect_uris: [...(app.oauth?.redirectUrls ?? [])],
+      post_logout_redirect_uris: [
+        ...(app.oauth?.post_logout_redirect_uri ?? [
+          config.post_logout_redirect_uri,
+        ]),
+      ],
     };
 
     if (app.appIcon) {

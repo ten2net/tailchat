@@ -60,6 +60,11 @@ export interface GlobalConfig {
    */
   disableUserRegisterBtn?: boolean;
 
+  /**
+   * cas登出url
+   */
+  casLogoutUrl?: string;
+
   announcement?:
     | false
     | {

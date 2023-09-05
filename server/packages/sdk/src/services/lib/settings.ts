@@ -11,6 +11,9 @@ const apiUrl = process.env.API_URL || `http://127.0.0.1:${port}`;
 const staticHost = process.env.STATIC_HOST || '{BACKEND}';
 const staticUrl = process.env.STATIC_URL || `${staticHost}/static/`;
 export const config = {
+  post_logout_redirect_uris: [
+    process.env.CC_BOTS_URL || 'http://192.168.15.130:8001',
+  ],
   port,
   secret: process.env.SECRET || 'tailchat',
   env: process.env.NODE_ENV || 'development',
@@ -60,6 +63,7 @@ export const config = {
       process.env.DISABLE_USER_REGISTER_BTN
     ), // 是否禁用登录页面的用户注册按钮
   },
+  casLogoutUrl: process.env.IAM_CAS_LOGOUT_URL,
 };
 
 export const builtinAuthWhitelist = [

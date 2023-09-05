@@ -1,7 +1,7 @@
 version: "3.3"
 
 services:
-  # Tailchat Core Services
+  # CCTALKS Core Services
   service-core:
     build:
       context: .
@@ -66,6 +66,8 @@ services:
     restart: on-failure
     volumes:
       - data:/data/db
+    ports:
+      - 27027:27017      
     networks:
       - internal
 
@@ -110,7 +112,7 @@ services:
 
 networks:
   internal:
-    name: tailchat-internal
+    name: cctalks-internal
 
 volumes:
   data:

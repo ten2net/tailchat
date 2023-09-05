@@ -35,6 +35,15 @@ const panelTemplate: {
         parentId: '00',
         type: GroupPanelType.TEXT,
       },
+      {
+        id: '02',
+        name: t('markdown'),
+        parentId: '00',
+        type: GroupPanelType.PLUGIN,
+        provider: 'Markdown Panel',
+        pluginPanelName: 'Markdown Panel/customwebpanel',
+        meta: { disableSendMessage: false },
+      },
     ],
   },
   {
@@ -412,7 +421,7 @@ const panelTemplate: {
   },
   {
     key: 'student',
-    label: t('学员培养组'),
+    label: t('学员班队组'),
     panels: [
       {
         id: '00',

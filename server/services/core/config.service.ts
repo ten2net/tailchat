@@ -86,6 +86,7 @@ class ConfigService extends TcService {
       disableAddFriend: config.feature.disableAddFriend,
       disableOwnerLogin: config.feature.disableOwnerLogin,
       disableUserRegisterBtn: config.feature.disableUserRegisterBtn,
+      casLogoutUrl: config.casLogoutUrl,
       ...persistConfig,
     };
   }
