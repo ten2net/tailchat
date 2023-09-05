@@ -66,6 +66,8 @@ services:
     restart: on-failure
     volumes:
       - data:/data/db
+    ports:
+      - 27027:27017      
     networks:
       - internal
 

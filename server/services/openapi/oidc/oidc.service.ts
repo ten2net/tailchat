@@ -51,6 +51,14 @@ const configuration: Configuration = {
     devInteractions: {
       enabled: false,
     },
+    requestObjects: {
+      mode: 'strict',
+    },
+    rpInitiatedLogout: {
+      enabled: true,
+      logoutSource: logoutSource, // see expanded details below
+      // postLogoutSuccessSource: [AsyncFunction: postLogoutSuccessSource] // see expanded details below
+    },
   },
   interactions: {
     url: (ctx, interaction) => `/open/interaction/${interaction.uid}`,
@@ -59,6 +67,32 @@ const configuration: Configuration = {
   // ttl.Session
   // renderError
 };
+
+async function logoutSource(ctx, form) {
+  // @param ctx - koa request context
+  // @param form - form source (id="op.logoutForm") to be embedded in the page and submitted by
+  //   the End-User
+  // shouldChange('features.rpInitiatedLogout.logoutSource', 'customize the look of the logout page');
+  ctx.body = `<!DOCTYPE html>
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta charset="utf-8">
+      <title>注销确认</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <style>
+        button,h1{text-align:center}h1{font-weight:100;font-size:1.3em}body{font-family:Roboto,sans-serif;margin-top:25px;margin-bottom:25px}.container{padding:0 40px 10px;width:274px;background-color:#F7F7F7;margin:0 auto 10px;border-radius:2px;box-shadow:0 2px 2px rgba(0,0,0,.3);overflow:hidden}button{font-size:14px;font-family:Arial,sans-serif;font-weight:700;height:36px;padding:0 8px;width:100%;display:block;margin-bottom:10px;position:relative;border:0;color:#fff;text-shadow:0 1px rgba(0,0,0,.1);background-color:#4d90fe;cursor:pointer}button:hover{border:0;text-shadow:0 1px rgba(0,0,0,.3);background-color:#357ae8}
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>确认从 ${ctx.host} 注销会话?</h1>
+        ${form}
+        <button autofocus type="submit" form="op.logoutForm" value="yes" name="logout">注销</button>
+        <button type="submit" form="op.logoutForm">取消</button>
+      </div>
+    </body>
+    </html>`;
+}
 
 function readIncomingMessageData(req: IncomingMessage) {
   return new Promise((resolve, reject) => {
@@ -298,8 +332,9 @@ class OIDCService extends TcService {
           'GET /auth': providerRoute,
           'GET /auth/:uid': providerRoute,
           'POST /token': providerRoute,
-          'POST /session/end': providerRoute,
+          'GET /session/end': providerRoute,
           'POST /session/end/confirm': providerRoute,
+          'GET /session/end/success': providerRoute,
           'POST /me': providerRoute,
           'GET /me': providerRoute,
           'GET /jwks': providerRoute,
