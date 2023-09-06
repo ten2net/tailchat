@@ -15,7 +15,7 @@ regCustomPanel({
   render: () => (
     <Webview
       className="w-full h-full bg-white"
-      url="http://192.168.15.130:8001/chat/gyeZJ6KrO2hmCofv"
+      url="http://talks.hjqtxy.net:8001/chat/gyeZJ6KrO2hmCofv"
     />
   ),
   useIsShow: useIconIsShow,
