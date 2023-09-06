@@ -123,7 +123,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/tVQNwEhPIbCgC1LD' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/tVQNwEhPIbCgC1LD',
+        },
       },
       {
         id: '022',
@@ -132,7 +134,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/gC0sF0nhFZXWhaKs' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/gC0sF0nhFZXWhaKs',
+        },
       },
     ],
   },
@@ -179,7 +183,7 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/chat/5bV05ak3vnFyzu9f' },
+        meta: { url: 'http://talks.hjqtxy.net:8001/chat/5bV05ak3vnFyzu9f' },
       },
       {
         id: '012',
@@ -199,7 +203,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/Y7gncagCWlkHYaLz' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/Y7gncagCWlkHYaLz',
+        },
       },
       {
         id: '022',
@@ -219,7 +225,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/gC0sF0nhFZXWhaKs' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/gC0sF0nhFZXWhaKs',
+        },
       },
       {
         id: '024',
@@ -228,7 +236,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/bZ062XKJ1wNAkpeK' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/bZ062XKJ1wNAkpeK',
+        },
       },
     ],
   },
@@ -286,7 +296,7 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/chat/SvY558a1OkfLD33T' },
+        meta: { url: 'http://talks.hjqtxy.net:8001/chat/SvY558a1OkfLD33T' },
       },
       {
         id: '012',
@@ -306,7 +316,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/Xm0QjEp7E23WnpAI' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/Xm0QjEp7E23WnpAI',
+        },
       },
       {
         id: '022',
@@ -315,7 +327,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/cUJqajzOT7KPxqSs' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/cUJqajzOT7KPxqSs',
+        },
       },
       {
         id: '023',
@@ -324,7 +338,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/lThsxotKiRex5LGg' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/lThsxotKiRex5LGg',
+        },
       },
     ],
   },
@@ -371,7 +387,7 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/chat/3EbGgV9o32VmblC1' },
+        meta: { url: 'http://talks.hjqtxy.net:8001/chat/3EbGgV9o32VmblC1' },
       },
       {
         id: '012',
@@ -397,7 +413,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/0vSJQaVegsD7E327' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/0vSJQaVegsD7E327',
+        },
       },
       {
         id: '022',
@@ -406,7 +424,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/fJT9OYG5K9oGsSPS' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/fJT9OYG5K9oGsSPS',
+        },
       },
       {
         id: '023',
@@ -415,7 +435,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/LvsmG2DkPpXv9rNU' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/LvsmG2DkPpXv9rNU',
+        },
       },
     ],
   },
@@ -462,7 +484,7 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/chat/jkDWp7ntkkaScCdE' },
+        meta: { url: 'http://talks.hjqtxy.net:8001/chat/jkDWp7ntkkaScCdE' },
       },
       {
         id: '012',
@@ -488,7 +510,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/0vSJQaVegsD7E327' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/0vSJQaVegsD7E327',
+        },
       },
       {
         id: '022',
@@ -497,7 +521,9 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/completion/euvbAXALMUmp9JDM' },
+        meta: {
+          url: 'http://talks.hjqtxy.net:8001/completion/euvbAXALMUmp9JDM',
+        },
       },
       {
         id: '023',
@@ -506,7 +532,7 @@ const panelTemplate: {
         type: GroupPanelType.PLUGIN,
         provider: 'com.msgbyte.webview',
         pluginPanelName: 'com.msgbyte.webview/grouppanel',
-        meta: { url: 'http://192.168.15.130:8001/chat/RgTilRjUTNebCaJ6' },
+        meta: { url: 'http://talks.hjqtxy.net:8001/chat/RgTilRjUTNebCaJ6' },
       },
     ],
   },
