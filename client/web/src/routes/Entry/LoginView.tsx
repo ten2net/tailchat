@@ -47,13 +47,17 @@ export const LoginView: React.FC = React.memo(() => {
   const navigate = useNavigate();
   const navRedirect = useSearchParam('redirect');
   const { pathname } = useLocation();
-  const { serverName, disableGuestLogin, disableUserRegisterBtn,disableOwnerLogin } =
-    useGlobalConfigStore((state) => ({
-      serverName: state.serverName,
-      disableGuestLogin: state.disableGuestLogin,
-      disableUserRegisterBtn: state.disableUserRegisterBtn,
-      disableOwnerLogin:state.disableOwnerLogin
-    }));
+  const {
+    serverName,
+    disableGuestLogin,
+    disableUserRegisterBtn,
+    disableOwnerLogin,
+  } = useGlobalConfigStore((state) => ({
+    serverName: state.serverName,
+    disableGuestLogin: state.disableGuestLogin,
+    disableUserRegisterBtn: state.disableUserRegisterBtn,
+    disableOwnerLogin: state.disableOwnerLogin,
+  }));
 
   useEffect(() => {
     tryAutoLogin()
@@ -92,31 +96,33 @@ export const LoginView: React.FC = React.memo(() => {
   return (
     <div className="w-96 relative">
       <div>
-      {!disableOwnerLogin && (
-        <div>
-          <div className="mb-3">
-            <EntryInput
-              name="login-email"
-              placeholder={t('邮箱')}
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+        {!disableOwnerLogin && (
+          <div>
+            <div className="mb-3 login-input">
+              <EntryInput
+                name="login-email"
+                placeholder={t('邮箱')}
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="mb-3">
+              <EntryInput
+                name="login-password"
+                type="password"
+                placeholder={t('密码')}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
           </div>
-          <div className="mb-3">
-            <EntryInput
-              name="login-password"
-              type="password"
-              placeholder={t('密码')}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-        </div>
         )}
         {loading === false && error && (
-          <div className="flex justify-between mb-4">
-            <p className="text-red-500 text-sm">{error.message}</p>
+          <div className="flex justify-between">
+            <p className="text-red-500 text-sm" style={{ lineHeight: '14px' }}>
+              {error.message}
+            </p>
             <div
               className="text-gray-200 cursor-pointer"
               onClick={() => navToView('/entry/forget')}
@@ -126,9 +132,13 @@ export const LoginView: React.FC = React.memo(() => {
           </div>
         )}
         {!disableOwnerLogin && (
-        <PrimaryBtn loading={loading} onClick={handleLogin}>
-          {t('登录')}
-        </PrimaryBtn>
+          <PrimaryBtn
+            className={clsx(styles.login_btn)}
+            loading={loading}
+            onClick={handleLogin}
+          >
+            {t('登录')}
+          </PrimaryBtn>
         )}
 
         {!disableUserRegisterBtn && (
@@ -149,10 +159,15 @@ export const LoginView: React.FC = React.memo(() => {
             <Icon icon="mdi:arrow-right" className="ml-1 inline" />
           </SecondaryBtn>
         )}
-        
       </div>
-      <div className={disableOwnerLogin?clsx(styles.cont_box_right_cont_mt_pb)+' text-white':'text-white'} >
-      {pluginLoginAction.map((item) => {
+      <div
+        className={
+          disableOwnerLogin
+            ? clsx(styles.cont_box_right_cont_mt_pb) + ' text-white'
+            : 'text-white'
+        }
+      >
+        {pluginLoginAction.map((item) => {
           const { name, component: Component } = item;
 
           return <Component key={name} />;

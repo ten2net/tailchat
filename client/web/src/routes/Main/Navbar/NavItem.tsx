@@ -9,6 +9,7 @@ export const NavbarNavItem: React.FC<
   PropsWithChildren<{
     name: string;
     className?: ClassValue;
+    style?: React.CSSProperties;
     to?: string;
     showPill?: boolean;
     badge?: boolean;
@@ -37,6 +38,7 @@ export const NavbarNavItem: React.FC<
       placement="right"
     >
       <div
+        style={props.style}
         className={clsx(
           'w-12 h-12 hover:rounded-lg transition-all duration-300 cursor-pointer flex items-center justify-center overflow-hidden',
           className,

@@ -175,7 +175,7 @@ export const builtinPlugins: PluginManifest[] = _compact([
     requireRestart: true,
   },
   {
-    label: 'AI应用',
+    label: 'AI服务',
     name: 'cn.e-u.aiapplication',
     url: '/plugins/cn.e-u.aiapplication/index.js',
     icon: '/plugins/cn.e-u.aiapplication/assets/icon.png',

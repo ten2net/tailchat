@@ -12,7 +12,7 @@ export const InboxNav: React.FC = React.memo(() => {
 
   return (
     <NavbarNavItem
-      className="bg-gray-700"
+      style={{ backgroundColor: '#0193ff' }}
       name={t('收件箱')}
       to={'/main/inbox'}
       showPill={true}
@@ -22,7 +22,7 @@ export const InboxNav: React.FC = React.memo(() => {
       }}
       data-testid="inbox"
     >
-      <Icon className="text-3xl text-white" icon="mdi:inbox-arrow-down" />
+      <Icon className="text-3xl text-white" icon="mdi:email-arrow-left" />
     </NavbarNavItem>
   );
 });
