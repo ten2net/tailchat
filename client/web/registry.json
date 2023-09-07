@@ -57,22 +57,14 @@
   },
   {
     "label": "AI Assistant",
+    "label.zh-CN": "AI 助手",
     "name": "com.msgbyte.ai-assistant",
     "url": "/plugins/com.msgbyte.ai-assistant/index.js",
     "icon": "/plugins/com.msgbyte.ai-assistant/assets/icon.png",
     "version": "0.0.0",
     "author": "moonrailgun",
     "description": "Add chatgpt into TALKS",
-    "requireRestart": true
-  },
-  {
-    "label": "AI CCBots",
-    "name": "cn.e-u.ccbots",
-    "url": "/plugins/cn.e-u.ccbots/index.js",
-    "icon": "/plugins/cn.e-u.ccbots/assets/icon.png",
-    "version": "0.0.0",
-    "author": "wangf",
-    "description": "Add ccbots into TALKS",
+    "description.zh-CN": "为 Talks 提供 AI 助手",
     "requireRestart": true
   }
 ]

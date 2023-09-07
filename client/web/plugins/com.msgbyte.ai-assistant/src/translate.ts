@@ -2,7 +2,7 @@ import { localTrans } from '@capital/common';
 
 export const Translate = {
   name: localTrans({
-    'zh-CN': 'AI Assistant',
+    'zh-CN': 'AI 助手',
     'en-US': 'AI Assistant',
   }),
   helpMeTo: localTrans({
